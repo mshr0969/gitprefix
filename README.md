@@ -1,5 +1,5 @@
 # gitprefix
-gitのprefixを表示するCLIツール
+gitのcommitメッセージにつけるprefixを表示するCLIツール
 
 ## Usage
 ### 簡単な使い方
@@ -38,4 +38,18 @@ sudo chmod +x /usr/local/bin/gitprefix
 #### 動かす
 ```bash
 gitprefix
+```
+どのディレクトリでもprefixを表示できる
+```bash
+```bash
+Commit Message Prefixes:
+feat: featureの略。機能の追加や更新の際に使用する。
+fix: bug fixの略。バグの修正の際に使用する。
+docs: documentationの略。ドキュメントの変更の際に使用する。
+style: コードの意味に影響を与えない変更の際に使用する。(インデント、セミコロンの追加など)
+refactor: コードのリファクタリングの際に使用する。
+perf: performanceの略。パフォーマンスの向上の際に使用する。
+test: テストの追加や修正の際に使用する。
+chore: その他、雑務的な変更の際に使用する。
+```
 ```
