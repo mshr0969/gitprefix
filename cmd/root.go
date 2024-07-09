@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -26,6 +27,9 @@ func Execute() {
 }
 
 func showPrefixes() {
+	green := "\033[32m"
+	reset := "\033[0m"
+
 	prefixes := []string{
 		"feat: A new feature",
 		"fix: A bug fix",
@@ -39,6 +43,11 @@ func showPrefixes() {
 
 	fmt.Println("Commit Message Prefixes:")
 	for _, prefix := range prefixes {
-		fmt.Println(prefix)
+		parts := strings.SplitN(prefix, ": ", 2)
+		if len(parts) == 2 {
+			fmt.Println(green + parts[0] + ":" + reset + " " + parts[1])
+		} else {
+			fmt.Println(prefix)
+		}
 	}
 }
